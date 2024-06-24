@@ -1,0 +1,563 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(219, 69%, 56%);
+  --first-color-alt: hsl(219, 69%, 52%);
+  --title-color: hsl(219, 8%, 95%);
+  --text-color: hsl(219, 8%, 75%);
+  --text-color-light: hsl(219, 4%, 55%);
+  --white-color: #fff;
+  --body-color: hsl(219, 4%, 4%);
+  --container-color: hsl(219, 4%, 7%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Exo', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section{
+    padding: 4.5rem 0 2rem;
+}
+
+.section__title{
+    font-size: var(--h2-font-size);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.main{
+    overflow: hidden;
+}
+
+.shape{
+    background-color: hsla(219, 33%, 32%, .5);
+    filter: blur(80px);
+}
+
+.shape-big{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+}
+
+.shape-small{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.shape-smaller{
+    height: 180px;
+    width: 180px;
+    /* filter: blur(64px); */
+}
+
+/*=============== HEADER & NAV ===============*/
+
+.header{
+    z-index: 1;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.nav{
+    height: var(--header-height+1.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.nav__logo,
+.nav__toggle{
+    color: var(--title-color);
+    display: inline-flex;
+}
+
+.nav__logo{
+    font-size: 1.5rem;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: var(--font-medium);
+    transition: .3s;
+}
+
+.nav__logo i{
+    font-size: 1.25rem;
+}
+
+.nav__logo:hover{
+    color: var(--first-color);
+}
+
+
+.nav__menu, .nav__menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nav__menu ul{
+    margin-right: 5rem;
+}
+
+.nav__user{
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.nav__user:hover{
+    color: var(--first-color);
+}
+
+.nav__link{
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-weight: var(--font-medium);
+    transition: .3s;
+    margin-right: 1rem;
+}
+
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+
+/* Show menu */
+
+
+/* Change background header */
+
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+
+.home__container{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__title{
+    font-size: var(--h2-font-size);
+}
+
+.home__subtitle{
+    font-size: var(--h3-font-size);
+    position: relative;
+    top: 1rem;
+}
+
+.home__elec i{
+    color: var(--first-color);
+}
+
+.home__elec h3{
+    color: var(--text-color);
+}
+
+.home__elec{
+    font-size: var(--small-font-size);
+}
+
+.home__container img{
+    width: 400px;
+    margin-top: 3rem;
+}
+
+.home__car{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home__car-data{
+    border: .1rem solid var(--first-color-alt);
+    border-radius: 1rem;
+    height: 147px;
+    width: 173px;
+    background-color: var(--container-color);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.home__car-icon{
+    font-size: var(--h1-font-size);
+    color: var(--first-color);
+}
+
+.home__car-name{
+    font-size: .625rem;
+    font-weight: 100;
+    color: var(--text-color-light);
+    margin-top: .3rem;
+}
+
+.home__btn{
+    margin-top: 1.5rem;
+    position: relative;
+    color: #fff;
+    border: 2px solid hsl(158, 89%, 30%);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.home__btn::before{
+    content: '';
+    position: absolute;
+    color: var(--white-color);
+    border: 2px solid hsl(158, 98%, 43%);
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 12px hsl(158, 98%, 43%);
+    animation: button 3s infinite;
+}
+
+/* Button animate */
+
+@keyframes button {
+    0%{
+        box-shadow: 0 0 12px hsl(158, 98%, 43%);
+    }
+
+    50%{
+        box-shadow: 0 0 36px hsl(158, 98%, 43%);
+    }
+}
+
+.shape{   
+    position: absolute;
+    animation: shape 3s infinite;
+}
+
+.shape-big{
+    z-index: -1;
+    left: -9rem;
+    top: -9rem;
+    animation: shape-big 20s infinite;
+}
+
+.shape-small{
+    right: -3rem;
+    bottom: -3rem;
+    animation: shape-small 20s infinite;
+}
+
+
+@keyframes shape{
+    0%{
+        box-shadow: 0 0 12px hsl(158, 98%, 43%);
+        filter: blur(90px);
+    }
+
+    50%{
+        box-shadow: 0 0 36px hsl(158, 98%, 43%);
+        filter: blur(0px);
+    }
+}
+
+@keyframes shape-big {
+    0%{
+        box-shadow: 0 0 12px hsl(158, 98%, 43%);
+    }
+
+    50%{
+        box-shadow: 0 0 36px hsl(158, 98%, 43%);
+        right: 40%;
+        bottom: 40%;
+        left: 40%;
+        top: 40%;
+    }
+}
+
+@keyframes shape-small {
+    0%{
+        box-shadow: 0 0 12px hsl(158, 98%, 43%);
+    }
+
+    50%{
+        box-shadow: 0 0 36px hsl(158, 98%, 43%);
+        /* left: 40%;
+        right: 40%;
+        top: 40%;
+        bottom: 40%; */
+    }
+}
+
+/*=============== BUTTON ===============*/
+
+.button{
+    background-color: var(--first-color);
+    display: inline-block;
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    border-radius: .3rem;
+    transition: .3s;
+}
+
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+
+
+/*=============== ABOUT ===============*/
+
+.about__container{
+    margin-top: 150px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.about__group{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .about__group img{
+    width: 450px;
+    border-radius: 1.5rem;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+}
+
+.about__card{
+    width: 180px;
+    position: absolute;
+    right: 5rem;
+    bottom: -3.5rem;
+    background-color: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(16px);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.about__data{
+    padding: 2rem;
+}
+
+.about__title{
+    text-align: start;
+}
+
+/*=============== POPULAR ===============*/
+
+.popular__container{
+    margin-top: 150px;
+    padding-top: 1rem;
+}
+
+.popular__card{
+    position: relative;
+    width: 238px;
+    padding: 2rem 1.5rem 1.5rem;
+    background-color: var(--container-color);
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.popular__card img{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.popular__title{
+    font-size: var(--h2-font-size);
+    margin-bottom: .2rem;
+}
+
+.popular__subtitle{
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    color: var(--text-color-light);
+}
+
+/* .shape-smaller{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+} */
+
+.popular__data{
+    display: flex;
+    flex-direction: column;
+}
+
+.popular__data-group{
+    padding: .3rem;
+}
+
+.popular__data-group i{
+    margin-right: 1rem;
+}
+
+.popular__price{
+    margin-top: 1.25rem;
+    margin-left: 1rem;
+}
+
+.popular__button{
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    padding: 1rem 1.5rem;
+}
+
+.popular__button i{
+    font-size: 1rem;
+}
+
+.popular__card:hover .popular__img{
+    transform: translateY(-.25rem);
+}
+
+.swiper-pagination{
+    margin-top: 1rem;
+}
+
+.swiper-pagination-bullet{
+    background: var(--first-color);
+}
+
+
+
+
+/* Swiper class */
+
+
+/*=============== FEATURES ===============*/
+
+
+/*=============== FEATURED ===============*/
+
+
+/* Active link featured */
+
+
+/*=============== OFFER ===============*/
+
+
+/*=============== LOGOS ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
