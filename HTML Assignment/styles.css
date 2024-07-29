@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.editor {
+    display: flex;
+    background-color: #ffc107;
+    padding: 20px;
+}
+
+#editingArea {
+    width: 60%;
+    height: 600px;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.sidebar label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.sidebar select, .sidebar input, .sidebar button {
+    width: 40%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.text {
+    position: absolute;
+    cursor: move;
+    user-select: none;
+}
+
+.selected {
+    border: 2px dashed #000;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+input[id="fontSize"]{
+    width: 7%;
+}
