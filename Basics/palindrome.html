@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Palindrome Checker</h2>
+
+    <label for="inputString">Enter a string:</label>
+    <!-- <input type="text" id="inputString" placeholder="e.g., madam"> -->
+
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        function checkPalindrome() {
+            var inputString = prompt("Enter a string:");
+            var resultParagraph = document.getElementById("result");
+
+            // Remove non-alphanumeric characters and convert to lowercase
+            var cleanedString = inputString.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+
+            // Check if the cleaned string is equal to its reverse
+            if (cleanedString === cleanedString.split('').reverse().join('')) {
+                resultParagraph.innerHTML = "The entered string \"" + inputString + "\" is a palindrome.";
+            } else {
+                resultParagraph.innerHTML = "The entered string \"" + inputString + "\" is not a palindrome.";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .cart {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        h2 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .cart h3 {
+            margin: 10px 0;
+        }
+
+        ul#cartList {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul#cartList li {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Shopping Cart</h2>
+        <div>
+            <label for="bookName">Book Name:</label>
+            <input type="text" id="bookName">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1">
+            <button id="addToCart">Add to Cart</button>
+        </div>
+
+        <div class="cart">
+            <h3>Shopping Cart</h3>
+            <ul id="cartList"></ul>
+        </div>
+    </div>
+
+    <script>
+        const cartList = document.getElementById('cartList');
+        const bookNameInput = document.getElementById('bookName');
+        const quantityInput = document.getElementById('quantity');
+        const addToCartButton = document.getElementById('addToCart');
+
+        addToCartButton.addEventListener('click', addToCart);
+
+        function addToCart() {
+            const bookName = bookNameInput.value;
+            const quantity = parseInt(quantityInput.value);
+
+            if (!bookName || isNaN(quantity) || quantity <= 0) {
+                alert('Please enter a valid book name and quantity.');
+                return;
+            }
+
+            const existingItem = Array.from(cartList.children).find(item =>
+                item.getAttribute('data-bookname') === bookName
+            );
+
+            if (existingItem) {
+                const existingQuantity = parseInt(existingItem.getAttribute('data-quantity'));
+                const newQuantity = existingQuantity + quantity;
+                existingItem.setAttribute('data-quantity', newQuantity);
+                existingItem.textContent = `${bookName} (Quantity: ${newQuantity})`;
+            } else {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${bookName} (Quantity: ${quantity})`;
+                listItem.setAttribute('data-bookname', bookName);
+                listItem.setAttribute('data-quantity', quantity);
+                cartList.appendChild(listItem);
+            }
+
+            bookNameInput.value = '';
+            quantityInput.value = '';
+        }
+    </script>
+</body>
+</html>

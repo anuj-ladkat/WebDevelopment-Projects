@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font and Background Color Selector</title>
+</head>
+<body>
+    <h1 id="heading">Heading Text</h1>
+    
+    <label for="fontColor">Select Font Color:</label>
+    <select id="fontColor">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+
+    <label for="bgColor">Select Background Color:</label>
+    <select id="bgColor">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const fontColorSelect = document.getElementById("fontColor");
+        const bgColorSelect = document.getElementById("bgColor");
+
+        function applyStyles() {
+            const selectedFontColor = fontColorSelect.value;
+            const selectedBgColor = bgColorSelect.value;
+
+            if (selectedFontColor !== selectedBgColor) {
+                heading.style.color = selectedFontColor;
+                heading.style.backgroundColor = selectedBgColor;
+            } else {
+                // If font color and background color are the same, don't change anything
+                alert("Font color and background color are the same. No changes applied.");
+            }
+        }
+
+        // Add event listeners to the dropdowns
+        fontColorSelect.addEventListener("change", applyStyles);
+        bgColorSelect.addEventListener("change", applyStyles);
+
+        // Initial application of styles
+        applyStyles();
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Rows to Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table Example</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here -->
+        </tbody>
+    </table>
+    <button onclick="addRow()">Add Row</button>
+
+    <script>
+        function addRow() {
+            const name = prompt("Enter Name:");
+            const age = prompt("Enter Age:");
+
+            if (name && age) {
+                const tableBody = document.querySelector("#data-table tbody");
+                const newRow = tableBody.insertRow();
+                
+                const nameCell = newRow.insertCell(0);
+                const ageCell = newRow.insertCell(1);
+                
+                nameCell.textContent = name;
+                ageCell.textContent = age;
+            } else {
+                alert("Both Name and Age are required.");
+            }
+        }
+    </script>
+</body>
+</html>

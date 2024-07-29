@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        div {
+            text-align: left;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Student Admission Form</h2>
+        <form method="post" action="process_admission.php">
+            <label for="studentID">Student ID:</label>
+            <input type="text" name="studentID" required>
+
+            <label for="studentName">Student Name:</label>
+            <input type="text" name="studentName" required>
+
+            <label for="emailID">Email ID:</label>
+            <input type="text" name="emailID" required>
+
+            <label for="12thGrade">12th Grade:</label>
+            <input type="text" name="12thGrade" required>
+
+            <label for="JEEScore">JEE Score:</label>
+            <input type="number" name="JEEScore" required>
+
+            <label for="Department">Department:</label>
+            <input type="text" name="Department" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

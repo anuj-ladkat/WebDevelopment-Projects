@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration Form</title>
+    <!-- You can link your CSS stylesheets here -->
+</head>
+<body bgcolor="azure">
+    <h1 style="background-color: tomato;text-align: center;">Company Registration Form</h1>
+    <form action="process_registration.php" method="POST">
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" required><br><br>
+
+        <label for="contact_name">Contact Name:</label>
+        <input type="text" id="contact_name" name="contact_name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br><br>
+
+        <label for="registration_number">Registration Number:</label>
+        <input type="text" id="registration_number" name="registration_number" required><br><br>
+
+        <label for="industry">Industry:</label>
+        <select id="industry" name="industry" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="technology">Technology</option>
+            <option value="finance">Finance</option>
+            <option value="healthcare">Healthcare</option>
+            <!-- Add more industry options as needed -->
+        </select><br><br>
+
+        <label for="description">Company Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <!-- You can include your JavaScript code here for form validation, if required -->
+</body>
+</html>

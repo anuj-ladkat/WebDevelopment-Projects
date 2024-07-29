@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Occurrence Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        #container {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Character Occurrence Counter</h1>
+
+    <div id="container">
+        <label for="stringArray">Enter an array of strings (comma-separated):</label>
+        <input type="text" id="stringArray" placeholder="e.g., apple, banana, cherry">
+
+        <label for="character">Enter a character to count:</label>
+        <input type="text" id="character" placeholder="e.g., a">
+
+        <button onclick="countOccurrences()">Count Occurrences</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function countOccurrences() {
+            var stringArray = document.getElementById("stringArray").value.split(',');
+            var character = document.getElementById("character").value.trim();
+            var count = 0;
+
+            for (var i = 0; i < stringArray.length; i++) {
+                var str = stringArray[i].trim();
+
+                for (var j = 0; j < str.length; j++) {
+                    if (str[j] === character) {
+                        count++;
+                    }
+                }
+            }
+
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Occurrences of '" + character + "': " + count;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Color to Array</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Add Color to Array</h2>
+    <form id="colorForm">
+      <label for="colorInput">Enter a color:</label>
+      <input type="text" id="colorInput" placeholder="Color name" required>
+      <button type="submit">Add Color</button>
+    </form>
+    <p id="message"></p>
+    <h3>Updated Colors:</h3>
+    <ul id="colorList"></ul>
+  </div>
+
+  <script>
+    var colors = ["Red", "Green", "Blue"];
+    var colorForm = document.getElementById("colorForm");
+    var colorInput = document.getElementById("colorInput");
+    var message = document.getElementById("message");
+    var colorList = document.getElementById("colorList");
+
+    colorForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var userColor = colorInput.value;
+      if (colors.indexOf(userColor) === -1) {
+        colors.push(userColor);
+        message.textContent = userColor + " has been added to the array.";
+        displayColors();
+      } else {
+        message.textContent = userColor + " is already in the array.";
+      }
+      colorInput.value = "";
+    });
+
+    function displayColors() {
+      colorList.innerHTML = "";
+      colors.forEach(function (color) {
+        var listItem = document.createElement("li");
+        listItem.textContent = color;
+        colorList.appendChild(listItem);
+      });
+    }
+
+    displayColors();
+  </script>
+</body>
+</html>

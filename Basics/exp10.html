@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circle Animation</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 1s ease; /* Animation duration and easing */
+        }
+
+        button {
+            padding: 10px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="circle"></div>
+    <button id="animate-button">Animate Circle</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#animate-button").click(function() {
+                // Add an animation to the circle when the button is clicked
+                $(".circle").css({
+                    width: '200px',
+                    height: '200px',
+                    backgroundColor: '#e74c3c'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

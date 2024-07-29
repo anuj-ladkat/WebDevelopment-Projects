@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change background color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        li:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        li.active {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul id="myList">
+        <li>Blue</li>
+        <li>Green</li>
+        <li>Pink</li>
+        <li>Maroon</li>
+        <li>Pink</li>
+    </ul>
+
+    <script>
+        var list = document.getElementById("myList");
+        var colors = ["blue", "green", "pink", "maroon", "pink"];
+
+        for (var i = 0; i < list.children.length; i++) {
+            list.children[i].addEventListener("click", function() {
+                var colorIndex = Array.prototype.indexOf.call(list.children, this);
+                var color = colors[colorIndex % colors.length];
+                document.body.style.backgroundColor = color;
+
+                // Remove the 'active' class from all list items
+                for (var j = 0; j < list.children.length; j++) {
+                    list.children[j].classList.remove("active");
+                }
+
+                // Add the 'active' class to the clicked list item
+                this.classList.add("active");
+            });
+        }
+    </script>
+</body>
+</html>

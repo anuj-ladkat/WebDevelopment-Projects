@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Button Color Change</title>
+    
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <script>
+        var button = document.getElementById("myButton");
+
+        button.addEventListener("mouseover" ,function() {
+            button.style.backgroundColor = "#e67e22";
+        });
+
+        button.addEventListener("mouseout" ,function() {
+            button.style.backgroundColor = "#3498db";
+        });
+
+        button.addEventListener("click" ,function() {
+            button.style.backgroundColor = "#2ecc71";
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Background</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #colorDiv {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Color Background</h2>
+
+    <label for="colorInput">Enter a color name:</label>
+    <input type="text" id="colorInput" placeholder="e.g., red">
+
+    <button onclick="applyColor()">Apply Color</button>
+
+    <div id="colorDiv"></div>
+
+    <script>
+        function applyColor() {
+            var colorName = document.getElementById("colorInput").value.toLowerCase();
+            var colorDiv = document.getElementById("colorDiv");
+
+            // Validating color name
+            if (isValidColorName(colorName)) {
+                colorDiv.style.backgroundColor = colorName;
+            } else {
+                alert("Please enter a valid color name.");
+            }
+        }
+
+        function isValidColorName(name) {
+            // List of some basic color names for demonstration
+            var validColorNames = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "brown"];
+
+            // Check if the entered name is in the list
+            return validColorNames.includes(name);
+        }
+    </script>
+
+</body>
+</html>

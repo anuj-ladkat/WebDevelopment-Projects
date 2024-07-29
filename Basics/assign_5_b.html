@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Rows to Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>This assignment shows how anchor tag works</h1><br>
+        <h2>Click on following button</h2>
+        <button id="addAnchorBtn">Click Me</button>
+    </div>
+    <script>
+        function addAnchorTag() {
+            var container = document.getElementById("container");
+
+            var anchor = document.createElement("a");
+            anchor.href = "https://www.animefillerlist.com/";
+            anchor.textContent = "Click Me!";
+            container.appendChild(anchor);
+        }
+
+        var addAnchorBtn = document.getElementById("addAnchorBtn");
+        addAnchorBtn.addEventListener("click", addAnchorTag);
+    </script>
+</body>
+</html>

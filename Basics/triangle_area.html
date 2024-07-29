@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Triangle Area Calculator</h2>
+
+    <label for="side1">Enter length of side 1:</label>
+    <input type="number" id="side1">
+
+    <label for="side2">Enter length of side 2:</label>
+    <input type="number" id="side2">
+
+    <label for="side3">Enter length of side 3:</label>
+    <input type="number" id="side3">
+
+    <button onclick="calculateArea()">Calculate Area</button>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        function calculateArea() {
+            var side1 = parseFloat(document.getElementById("side1").value);
+            var side2 = parseFloat(document.getElementById("side2").value);
+            var side3 = parseFloat(document.getElementById("side3").value);
+
+            // Check if the input is valid
+            if (isNaN(side1) || isNaN(side2) || isNaN(side3) || side1 <= 0 || side2 <= 0 || side3 <= 0) {
+                alert("Please enter valid positive numbers for all sides.");
+                return;
+            }
+
+            // Calculate semi-perimeter
+            var s = (side1 + side2 + side3) / 2;
+
+            // Calculate area using Heron's formula
+            var area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+            document.getElementById("result").innerHTML = "Area of the triangle: " + area.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Array Operations</h2>
+
+    <label for="arrayInput">Enter an array (comma-separated):</label>
+    <input type="text" id="arrayInput" placeholder="e.g., 10, 5, 8, 3">
+
+    <button onclick="displayEnteredArray()">1. Display Entered Array</button>
+    <button onclick="displayAscendingOrder()">2. Display Entered Array (Ascending Order)</button>
+    <button onclick="pushElement()">3. Push Element 25</button>
+    <button onclick="displayUpdatedArray()">4. Display Updated Array</button>
+    <button onclick="displayArrayLength()">5. Print Length of Array</button>
+    <button onclick="displayElementAtPosition()">6. Show Element at Position No 3</button>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        var userArray = [];
+
+        function getUserArray() {
+            var inputArray = document.getElementById("arrayInput").value;
+            userArray = inputArray.split(',').map(Number);
+            return userArray;
+        }
+
+        function displayEnteredArray() {
+            getUserArray();
+            document.getElementById("result").innerHTML = "Entered Array: " + userArray.join(', ');
+        }
+
+        function displayAscendingOrder() {
+            getUserArray();
+            var sortedArray = userArray.slice().sort(function(a, b){return a - b});
+            document.getElementById("result").innerHTML = "Entered Array (Ascending Order): " + sortedArray.join(', ');
+        }
+
+        function pushElement() {
+            getUserArray();
+            userArray.push(25);
+            document.getElementById("result").innerHTML = "Element 25 pushed into the array.";
+        }
+
+        function displayUpdatedArray() {
+            document.getElementById("result").innerHTML = "Updated Array: " + userArray.join(', ');
+        }
+
+        function displayArrayLength() {
+            document.getElementById("result").innerHTML = "Length of Array: " + userArray.length;
+        }
+
+        function displayElementAtPosition() {
+            document.getElementById("result").innerHTML = "Element at Position No 3: " + userArray[2];
+        }
+    </script>
+
+</body>
+</html>

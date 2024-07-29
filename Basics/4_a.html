@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+
+        #changeColorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="changeColorButton">Change Background Color</button>
+
+    <script>
+        const colors = ["#FF5733", "#33FF57", "#5733FF", "#FFFF33", "#33FFFF"];
+        let currentIndex = 0;
+
+        const button = document.getElementById("changeColorButton");
+
+        button.addEventListener("click", () => {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        });
+    </script>
+</body>
+</html>
