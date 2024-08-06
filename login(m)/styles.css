@@ -1,0 +1,263 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  /* overflow: hidden; Prevents scrolling during animation */
+  background-color: #f5f5f5;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  height: 60px;
+}
+
+.new-customer {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.enroll-btn {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.login-form {
+  flex: 1;
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.house-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  right: 3%;
+}
+
+.house-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.loading-triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #4CAF50;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+p {
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.login-btn {
+  position: relative;
+  padding: 15px;
+  background-color: #3a980b;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.btn-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.login-btn.loading .btn-text {
+  opacity: 0;
+}
+
+.login-btn.loading .btn-spinner {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.forgot-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.forgot-links a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background-color: white;
+  color: #666;
+  font-size: 12px;
+  border-top: 1px solid #eee;
+}
+.expanding-image {
+  object-fit: cover;
+  max-width: none;
+  max-height: none;
+  border-radius: 30px;
+}
+
+.new-customer {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2c;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #2c2c2c transparent;
+  transform: translateX(-50%);
+}
+
+.tooltip h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.tooltip ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.tooltip li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.tooltip li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #8dc63f;
+}
+
+.enroll-btn:hover + .tooltip,
+.tooltip:hover {
+  display: block;
+}
