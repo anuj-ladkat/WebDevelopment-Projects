@@ -143,7 +143,7 @@ document.addEventListener('keydown', function(event) {
         saveState();
         deselectText();
     }
-});
+}); 
 
 document.addEventListener('DOMContentLoaded', () => {
     saveState();
