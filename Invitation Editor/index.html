@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Image Editor</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="editor">
+            <div class="image-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/inv1.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/inv2.jpg" alt="Image 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/inv3.jpg" alt="Image 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/inv4.jpg" alt="Image 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/inv5.jpg" alt="Image 5">
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="editor-options">
+                <div class="editor-header">
+                    <button id="undo-button">Undo</button>
+                    <button id="redo-button">Redo</button>
+                </div>
+                <label for="font">Font</label>
+                <select id="font">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="'Helvetica', sans-serif">Helvetica</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                </select>
+                <label for="size">Size</label>
+                <input type="number" id="size" value="16" min="10" max="50">
+                <label for="color">Color</label>
+                <input type="color" id="color" value="#000000"><br>
+                <button id="add-text-button">Add Text</button>
+            </div>
+            <div class="side-panel">
+                <h2>Current Slide</h2>
+                <div class="slide-thumbnails">
+                    <img src="assets/inv1.jpg" alt="Image 1" class="thumbnail">
+                    <img src="assets/inv2.jpg" alt="Image 2" class="thumbnail">
+                    <img src="assets/inv3.jpg" alt="Image 3" class="thumbnail">
+                    <img src="assets/inv4.jpg" alt="Image 4" class="thumbnail">
+                    <img src="assets/inv5.jpg" alt="Image 5" class="thumbnail">
+                    
+                </div>
+                <button id="customize-button">Customize</button>
+                <div id="customize-panel">
+                    <h2>Rearrange Slides</h2>
+                    <ul id="slide-list">
+                        <!-- Slide list will be generated dynamically -->
+                    </ul>
+                    <button id="save-button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
