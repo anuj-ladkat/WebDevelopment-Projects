@@ -1,0 +1,475 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+.container {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.right-side {
+    flex: 4;
+    padding: 40px; /*use em or %*/
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.left-side{
+    flex: 7;
+    padding: 40px; /*use em or % !MARKER*/
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #7777;
+    align-items: center; /* Center items horizontally */
+}
+
+.selfie-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%; /* Adjust as needed */
+    position: relative;
+    right: 5%;
+}
+
+h1 {
+    font-size: 20px; /*1.5em*/
+    margin-bottom: 0px; /* Initialize with *{margin:0; padding:0;}*/
+    color: #444444;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+p {
+    font-size: 16px; /*1.2em or 1em*/
+    color: #999999;
+    /* margin-bottom: 30px; */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #444444;
+    text-align: center;
+}
+
+.follow{
+    position: relative;
+    top: 10%;
+}
+.selfie-container {
+    width: 280px; /*Use %*/
+    height: 320px; /* why height ?*/
+    /* margin: 0 auto 20px; */
+    position: relative;
+    /* top: 5%; */
+    /* right: 5%; */
+    margin-bottom: 20px; /* Space between container and button */
+}
+.outer-circle {
+    width: 350px;
+    height: 400px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.selfie-image {
+    width: 330px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+#faceOverlay{
+    position: absolute;
+    top: 44px;
+    left: 49px;
+    width: 257px;
+    height: 310px;
+    pointer-events: none;
+    fill: white;
+}
+
+.check-mark {
+    position: absolute;
+    top: 117%;
+    left: 54%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #4E9459;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: white;
+    border-style: solid;
+    border-width: 4px;
+}
+/* .check-mark::before {
+    content: url(assets/icons8-tick.svg);
+    color: white;
+    font-size: 10px;
+} */
+.take-selfie-btn {
+    background-color: #4E9459;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    top: 20%;
+    left: 13%;
+}
+.take-selfie-btn:hover, .see-magic-link {
+    background-color: #4E9459;
+}
+
+.see-magic-link{
+    background-color: #4E9459;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    font-size: 16px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.guidelines {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 8%;
+}
+
+.see-magic-link {
+    background-color: transparent;
+    color: #4E9459;
+    text-decoration: underline;
+}
+.guideline-icon {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    background-color: #4E9459;
+    border-radius: 50%;
+}
+.guideline-icon svg {
+    width: 40px;
+    height: 25px;
+    /* margin-bottom: 1px; */
+    fill: white;
+    position: relative;
+    top: 25%;
+}
+
+.guideline-icon img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    fill: white;
+}
+
+.guidelines p{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777777;
+    margin-top: 55%;
+}
+
+.right-side img{
+    width: 40%;
+    height: 50%;
+    position: relative;
+    left: 30%;
+    top: 6%;
+    scale: 1.1;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.back-btn::before {
+    content: url(assets/thin-arrow-left-icon.svg);
+    color: white;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    
+}
+.desktop-ellipse {
+    display: block;
+}
+
+.mobile-ellipse {
+    display: none;
+}
+
+.desktop-ellipse {
+    stroke: #4E9459;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 1140;
+    stroke-dashoffset: 1140;
+    transform: rotate(90deg); /* Rotate to start at bottom */
+    transform-origin: center;
+}
+
+.mobile-ellipse {
+    stroke: #4E9459;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 1159;
+    stroke-dashoffset: 1159;
+    transform: rotate(90deg); /* Rotate to start at bottom */
+    transform-origin: center;
+}
+
+
+/* @keyframes drawBorder {
+    0% {
+        stroke-dasharray: 302;
+        stroke-dashoffset: 302;
+    }
+    100% {
+        stroke-dasharray: 302;
+        stroke-dashoffset: 0;
+    }
+} */
+
+.outer-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes drawCircle {
+    to {
+    stroke-dashoffset: 0;
+    }
+}
+@keyframes drawTick {
+    from { stroke-dasharray: 0 100; }
+    to { stroke-dasharray: 100 100; }
+}
+@keyframes growCheckbox {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+
+.check-mark {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.tick {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 0;
+    stroke: white;
+    stroke-width: 3;
+    fill: none;
+}
+
+.selfie-container svg{
+    width: 125%;
+    height: 125%;
+}
+
+/* Mobile view starts here */
+
+@media screen and (max-width: 48em){
+    /* .container {
+        flex-direction: column;
+} */
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .right-side {
+        display: none; /* Hide right side by default on mobile */
+    }
+
+    .see-magic-link {
+        display: block; /* Show the link in mobile view */
+        background-color: transparent;
+        color: #4E9459;
+        text-decoration: underline;
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        top: 8%;
+        left: 2%;
+    }
+
+    .back-btn {
+        display: block; /* Show back button in mobile view */
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        color: #4E9459;
+        cursor: pointer;
+    }
+    .selfie-container {
+        width: 280px;
+        height: 320px;
+        margin: 0 auto 20px;
+        position: relative;
+        top: 5%;
+        right: 5%;
+    }
+    .outer-circle {
+        width: 300px;
+        height: 364px;
+        border: 2px solid white;
+        border-radius: 50%;
+        Position: absolute;
+        top: -30px;
+        left: 4px;
+    }
+    .selfie-container svg{
+        width: 106%;
+        height: 113%;
+    }
+    .selfie-image {
+        width: 280px;
+        height: 345px;
+        object-fit: cover;
+        border-radius: 50%;
+        position: absolute;
+        top: -19px;
+        left: 14px;
+    }
+    .check-mark {
+        position: absolute;
+        top: 96%;
+        left: 47%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: #4E9459;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: white;
+        border-style: solid;
+        border-width: 4px;
+    }
+    #faceOverlay{
+        position: absolute;
+        top: 10px;
+        left: 32px;
+        width: 248px;
+        height: 279px;
+        pointer-events: none;
+        fill: white;
+    }
+
+    .take-selfie-btn {
+        background-color: #4E9459;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        margin: 20px auto 0;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        top: 8%;
+        left: 0%;
+    }
+
+    .right-side img{
+        width: 50%;
+        height: 50%;
+        position: relative;
+        left: 25%;
+        bottom: 5%;
+    }
+
+    .guidelines {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8%;
+    }
+
+    .desktop-ellipse {
+        display: none;
+    }
+    
+    .mobile-ellipse {
+        display: block;
+    }
+
+    .selfie-section {
+        margin-top: 5%; /* Increase top margin for mobile */
+        position: relative;
+        left: 0%;
+    }
+
+    .take-selfie-btn {
+        margin-top: 20px; /* Add some space above the button on mobile */
+    }
+
+    .see-magic-link {
+        margin-top: 1%; /* Increase space above the link on mobile */
+    }
+
+}

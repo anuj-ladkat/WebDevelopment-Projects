@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+.container {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.right-side {
+    flex: 4;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-side{
+    flex: 7;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #7777;
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 80%;
+    max-width: 400px; /* Adjust this value as needed */
+    margin: 20px 0;
+    align-self: center;
+    align-content: center;
+}
+
+.image-container img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    left: 15%;
+    /* top: 10%; */
+}
+
+.selfie-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    position: relative;
+    /* right: 5%; */
+}
+
+h1 {
+    font-size: 1.2em;
+    color: #444444;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+p {
+    font-size: 1em;
+    color: #999999;
+    /* margin-bottom: 30px; */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #444444;
+    text-align: center;
+}
+
+.follow{
+    position: relative;
+    /* top: 10%; */
+}
+.selfie-container {
+    width: 80%;
+    max-width: 350px;
+    aspect-ratio: 7/8;
+    position: relative;
+    margin-bottom: 5%;
+}
+.outer-circle {
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+}
+.selfie-image {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+
+#faceOverlay{
+    position: absolute;
+    top: 12%;
+    left: 14%;
+    width: 73%;
+    height: 77%;
+    pointer-events: none;
+    fill: white;
+}
+
+.check-mark {
+    position: absolute;
+    bottom: -5%;
+    left: 44%;
+    transform: translateX(-50%);
+    width: 11%;
+    height: 10%;
+    background-color: #4E9459;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid white;
+}
+.take-selfie-btn {
+    background-color: #4E9459;
+    border: none;
+    color: white;
+    padding: 2% 4%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+    margin: 3% auto 0;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    /* top: 20%;
+    left: 13%; */
+}
+.take-selfie-btn:hover, .see-magic-link {
+    background-color: #4E9459;
+}
+
+.see-magic-link{
+    background-color: #4E9459;
+    border: none;
+    color: white;
+    padding: 2% 4%;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    font-size: 1em;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.guidelines {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.see-magic-link {
+    background-color: transparent;
+    color: #4E9459;
+    text-decoration: underline;
+}
+.guideline-icon {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    background-color: #4E9459;
+    border-radius: 50%;
+}
+.guideline-icon svg {
+    width: 40px;
+    height: 25px;
+    /* margin-bottom: 1px; */
+    fill: white;
+    position: relative;
+    top: 25%;
+}
+
+/* .guideline-icon img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    fill: white;
+} */
+
+.guidelines p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #777777;
+    margin-top: 55%;
+}
+
+/* .right-side img{
+    width: 40%;
+    height: 50%;
+    position: relative;
+    left: 30%;
+    top: 6%;
+    scale: 1.1;
+} */
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.back-btn::before {
+    content: url(assets/thin-arrow-left-icon.svg);
+    color: white;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    
+}
+.desktop-ellipse {
+    display: block;
+}
+
+.mobile-ellipse {
+    display: none;
+}
+
+.desktop-ellipse {
+    stroke: #4E9459;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 1140;
+    stroke-dashoffset: 1140;
+    transform: rotate(90deg); /* Rotate to start at bottom */
+    transform-origin: center;
+    /* vector-effect: non-scaling-stroke; */
+}
+
+.mobile-ellipse {
+    stroke: #4E9459;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 1159;
+    stroke-dashoffset: 1159;
+    transform: rotate(90deg); /* Rotate to start at bottom */
+    transform-origin: center;
+    /* vector-effect: non-scaling-stroke; */
+}
+
+
+/* @keyframes drawBorder {
+    0% {
+        stroke-dasharray: 302;
+        stroke-dashoffset: 302;
+    }
+    100% {
+        stroke-dasharray: 302;
+        stroke-dashoffset: 0;
+    }
+} */
+
+.outer-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes drawCircle {
+    to {
+    stroke-dashoffset: 0;
+    }
+}
+@keyframes drawTick {
+    from { stroke-dasharray: 0 100; }
+    to { stroke-dasharray: 100 100; }
+}
+@keyframes growCheckbox {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+
+.check-mark {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.tick {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 0;
+    stroke: white;
+    stroke-width: 3;
+    fill: none;
+}
+
+.selfie-container svg{
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile view starts here */
+
+@media screen and (max-width: 768px){
+    /* .container {
+        flex-direction: column;
+} */
+
+.right-side {
+    display: none;
+}
+
+.see-magic-link {
+    display: block;
+}
+
+.back-btn {
+    display: block;
+}
+
+.selfie-section {
+    right: 0;
+}
+
+/* .desktop-ellipse {
+    display: none;
+}
+
+.mobile-ellipse {
+    display: block;
+} */
+
+}
